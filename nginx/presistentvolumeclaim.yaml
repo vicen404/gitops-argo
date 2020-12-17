@@ -1,17 +1,8 @@
 ---
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: basic-csi-nas1
-provisioner: csi.trident.netapp.io
-parameters:
-  selector: "system=nas1"
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: pvc-basic-csi-nas1
-  namespace: myns
 spec:
   accessModes:
     - ReadWriteMany
