@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: config-nginx
 data:
-  index_content: "Este fichero reside en NetApp volume!"
+  index_content: "Este fichero reside en NetApp!"
