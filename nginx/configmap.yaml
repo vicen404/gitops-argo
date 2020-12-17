@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-nginx
+data:
+  index_content: "Este fichero reside en NetApp Volume!"
