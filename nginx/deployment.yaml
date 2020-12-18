@@ -37,6 +37,6 @@ spec:
           - mountPath: /usr/share/nginx/html
             name: vol
         command: ["/bin/sh", "-c"]
-        args: ["echo hola > /usr/share/nginx/html/index.html"]
+        args: ["echo hola"]
       restartPolicy: Always
 ---
