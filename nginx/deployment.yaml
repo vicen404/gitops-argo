@@ -36,5 +36,7 @@ spec:
         volumeMounts:
           - mountPath: /usr/share/nginx/html
             name: vol
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'Este en un Volumen de NetApp' > /usr/share/nginx/html/index.html"]
       restartPolicy: Always
 ---
