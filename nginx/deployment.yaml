@@ -36,7 +36,6 @@ spec:
         volumeMounts:
           - mountPath: /usr/share/nginx/html
             name: vol
-        command: ["/bin/sh", "-c"]
-        args: ["echo hola"]
+        command: ["echo "hola"]
       restartPolicy: Always
 ---
