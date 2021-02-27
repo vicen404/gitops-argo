@@ -33,6 +33,10 @@ spec:
         ports:
           - containerPort:  80
             name:  "http"
+        args:
+        - /bin/sh
+        - -c
+        - echo "version 1" > /usr/share/nginx/html/index.html
         volumeMounts:
           - mountPath: /usr/share/nginx/html
             name: vol
