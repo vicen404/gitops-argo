@@ -1,11 +1,11 @@
 resources:
-  - bus-event-sensor-ingress.yaml
-  - event-source.yaml
-  - eventbus-default.yaml
-  - ingress-argo-events.yaml
-  - operate-workflow-role.yaml
+  - namespace.yaml
   - operate-workflow-sa.yaml
+  - operate-workflow-role.yaml
+  - eventbus-default.yaml
+  - event-source.yaml
   - sensor.yaml
+  - ingress-argo-events.yaml
 
 commonLabels:
   env: cluster1
