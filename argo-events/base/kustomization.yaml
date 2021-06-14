@@ -1,9 +1,7 @@
-namespace: ns1
 commonLabels:
   app: argo-events-example
 
 resources:
-  - namespace.yaml
   - operate-workflow-sa.yaml
   - operate-workflow-role.yaml
   - operate-workflow-rolebinding.yaml

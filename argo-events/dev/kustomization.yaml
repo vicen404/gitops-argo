@@ -1,3 +1,8 @@
 bases:
 - ../base
-namePrefix: dev-
+resources:
+- namespace-dev1.yaml
+
+namespace: dev-1
+commonLabels:
+  env: dev
