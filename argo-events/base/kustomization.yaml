@@ -1,3 +1,7 @@
+namespace: ns1
+commonLabels:
+  app: argo-events-example
+
 resources:
   - namespace.yaml
   - operate-workflow-sa.yaml
@@ -8,5 +12,3 @@ resources:
   - sensor.yaml
   - ingress-argo-events.yaml
 
-commonLabels:
-  env: cluster1
