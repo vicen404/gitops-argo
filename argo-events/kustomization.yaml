@@ -2,6 +2,7 @@ resources:
   - namespace.yaml
   - operate-workflow-sa.yaml
   - operate-workflow-role.yaml
+  - operate-workflow-rolebinding.yaml
   - eventbus-default.yaml
   - event-source.yaml
   - sensor.yaml
