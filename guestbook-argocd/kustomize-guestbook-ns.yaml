@@ -3,5 +3,8 @@ kind: Namespace
 metadata:
   creationTimestamp: null
   name: kustomize-guestbook
+  labels: {
+      name: "development"
+  }
 spec: {}
 status: {}
