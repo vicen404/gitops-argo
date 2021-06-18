@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app:  webservice
-  type:  LoadBalancer
+  type:  ClusterIP
   ports:
   - name:  serviceweb
     port:  80
