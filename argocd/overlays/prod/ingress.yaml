@@ -18,10 +18,10 @@ spec:
             name: argocd-server
             port:
               number: 80
-    host: argocd.host.com
+    host: argocd.nexus.io
   tls:
   - hosts:
-    - argocd.host.com
+    - argocd.nexus.io
     secretName: argocd-secret # do not change, this is provided by Argo CD
 ---
 apiVersion: networking.k8s.io/v1
@@ -43,8 +43,8 @@ spec:
             name: argocd-server
             port:
               number: 443
-    host: grpc.argocd.host.com
+    host: grpc.argocd.nexus.io
   tls:
   - hosts:
-    - grpc.argocd.host.com
+    - grpc.argocd.nexus.io
     secretName: argocd-secret # do not change, this is provided by Argo CD
