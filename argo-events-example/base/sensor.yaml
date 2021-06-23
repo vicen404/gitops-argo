@@ -30,7 +30,7 @@ spec:
               - name: hello
                 image: alpine
                 command: ["echo"]
-                args: ["Esto es el mensaje que has enviado:\n", ""]
+                args: ["Se ha provocado un evento tras el POST realizado con el siguiente BODY:\n", ""]
               restartPolicy: Never
         parameters:
           - src:
