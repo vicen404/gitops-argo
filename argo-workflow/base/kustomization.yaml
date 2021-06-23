@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- github/argoproj/argo-workflows/manifests/base/crds
-- github/argoproj/argo-workflows/manifests/base/workflow-controller
-- github/argoproj/argo-workflows/manifests/base/argo-server
+- github.com/argoproj/argo-workflows/manifests/base/crds
+- github.com/argoproj/argo-workflows/manifests/base/workflow-controller
+- github.com/argoproj/argo-workflows/manifests/base/argo-server
+
+namespace: argo-workflow
