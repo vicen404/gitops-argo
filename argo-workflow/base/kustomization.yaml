@@ -6,4 +6,4 @@ resources:
 - github.com/argoproj/argo-workflows/manifests/base/workflow-controller
 - github.com/argoproj/argo-workflows/manifests/base/argo-server
 
-namespace: argo-workflow
+namespace: argo
