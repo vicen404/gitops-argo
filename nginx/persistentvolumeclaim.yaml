@@ -5,7 +5,7 @@ metadata:
   name: pvc-basic-csi-nas1
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnly
   resources:
     requests:
       storage: 100Mi 
