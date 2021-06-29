@@ -9,5 +9,5 @@ spec:
   resources:
     requests:
       storage: 100Mi 
-  storageClassName: local-path
+  storageClassName: basic-csi-nas1
 ---
