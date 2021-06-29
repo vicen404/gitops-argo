@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: serviceweb
+  name: ingress-serviceweb
   annotations:
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/ssl-redirect: "false"
@@ -17,4 +17,4 @@ spec:
             name: serviceweb
             port:
               number: 80
-    host: nginx-example.host.com
+    host: nginx-example.nexus.io
