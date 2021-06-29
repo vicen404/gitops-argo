@@ -1,0 +1,87 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-minio
+  namespace: minio-1
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ## Remove if using CA signed certificate
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      client_max_body_size 0;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      chunked_transfer_encoding off;
+spec:
+  tls:
+  - hosts:
+      - minio.host.com
+    secretName: nginx-tls
+  rules:
+  - host: minio.host.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: minio
+          servicePort: 443
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-console
+  namespace: minio-1
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ## Remove if using CA signed certificate
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      client_max_body_size 0;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      chunked_transfer_encoding off;
+spec:
+  tls:
+  - hosts:
+      - minio-console.host.com
+    secretName: nginx-tls-console
+  rules:
+  - host: minio-console.host.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: minio-1-console
+          servicePort: 9443
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-console-http
+  namespace: minio-1
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ## Remove if using CA signed certificate
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      client_max_body_size 0;
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      chunked_transfer_encoding off;
+spec:
+  rules:
+  - host: minio-console-web.host.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: minio-console
+          servicePort: 9090
+
