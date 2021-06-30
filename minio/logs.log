@@ -1,0 +1,74 @@
+Log file created at: 2021/06/29 12:28:01
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:28:01.262357   10494 tenant-create.go:70] create tenant command started
+Log file created at: 2021/06/29 12:33:38
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:33:38.458693   10692 tenant-info.go:61] info tenant command started
+W0629 12:33:38.464546   10692 tenant-info.go:64] tenants.minio.min.io "repos3" not found
+Log file created at: 2021/06/29 12:33:46
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:33:46.672637   10726 tenant-info.go:61] info tenant command started
+Log file created at: 2021/06/29 12:38:48
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:38:48.070318   10804 tenant-delete.go:67] delete tenant command started
+Log file created at: 2021/06/29 12:43:09
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:43:09.650434   11113 init.go:77] init command started
+Log file created at: 2021/06/29 12:44:38
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:44:38.969586   11184 proxy.go:68] proxy command started
+Log file created at: 2021/06/29 12:45:15
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 12:45:15.370701   11232 proxy.go:68] proxy command started
+Log file created at: 2021/06/29 13:25:39
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:25:39.527733   11966 tenant-create.go:70] create tenant command started
+W0629 13:25:39.536346   11966 tenant-create.go:73] Namespace backuprepo not found, please create the namespace using 'kubectl create ns backuprepo'
+Log file created at: 2021/06/29 13:25:51
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:25:51.873509   12019 tenant-create.go:70] create tenant command started
+Log file created at: 2021/06/29 13:32:23
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:32:23.085828   12413 tenant-create.go:70] create tenant command started
+W0629 13:32:23.090212   12413 tenant-create.go:73] pool #0 setup must have a minimum of 2 volumes per server
+Log file created at: 2021/06/29 13:32:41
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:32:41.382115   12448 tenant-create.go:70] create tenant command started
+W0629 13:32:41.396593   12448 tenant-create.go:73] secrets "repos3-creds-secret" already exists
+Log file created at: 2021/06/29 13:33:20
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:33:20.813712   12520 tenant-create.go:70] create tenant command started
+Log file created at: 2021/06/29 13:48:09
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:48:09.307743   12749 tenant-delete.go:67] delete tenant command started
+Log file created at: 2021/06/29 13:51:25
+Running on machine: nzxt-h1
+Binary: Built with gc go1.16.4 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0629 13:51:25.196196   12952 tenant-create.go:70] create tenant command started

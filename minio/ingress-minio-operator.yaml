@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-console
+  namespace: minio-operator
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: minio-console.nexus.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: console
+          servicePort: 9090
