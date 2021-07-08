@@ -1,0 +1,52 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: "2021-07-08T15:08:51Z"
+  managedFields:
+  - apiVersion: route.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:host: {}
+        f:port:
+          .: {}
+          f:targetPort: {}
+        f:to:
+          f:kind: {}
+          f:name: {}
+          f:weight: {}
+        f:wildcardPolicy: {}
+    manager: oc
+    operation: Update
+    time: "2021-07-08T15:08:51Z"
+  - apiVersion: route.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:ingress: {}
+    manager: openshift-router
+    operation: Update
+    time: "2021-07-08T15:08:51Z"
+  name: minio-data
+  namespace: minio
+  resourceVersion: "340281"
+  uid: f6bc4c19-de45-4b21-8056-a904ed9a7aac
+spec:
+  host: data-minio.apps.lab.okd.local
+  port:
+    targetPort: 9000
+  to:
+    kind: Service
+    name: minio
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2021-07-08T15:08:51Z"
+      status: "True"
+      type: Admitted
+    host: data-minio.apps.lab.okd.local
+    routerCanonicalHostname: apps.lab.okd.local
+    routerName: default
+    wildcardPolicy: None
