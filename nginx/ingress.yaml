@@ -17,4 +17,4 @@ spec:
             name: serviceweb
             port:
               number: 80
-    host: nginx-example.nexus.io
+    host: nginx-example.host.com
