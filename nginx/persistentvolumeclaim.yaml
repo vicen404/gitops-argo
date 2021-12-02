@@ -9,5 +9,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: basic-csi-nas1
+  storageClassName: kadalu.storage-pool-1
 ---
