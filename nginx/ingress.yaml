@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-serviceweb
+  name: simple-example
+  namespace: nginx-ns
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:
+  - host: nginx-ns.host.com
+    http:
       paths:
       - path: /
         pathType: Prefix
@@ -17,4 +17,3 @@ spec:
             name: serviceweb
             port:
               number: 80
-    host: nginx-example.host.com
