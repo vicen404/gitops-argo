@@ -9,7 +9,6 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: portworx-sc1
 status:
   accessModes:
   - ReadWriteOnce
