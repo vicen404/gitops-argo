@@ -15,4 +15,4 @@ spec:
         backend:
           serviceName: gateway
           servicePort: 8000
-    host: kasten.nexus.io
+    host: kasten.host.com
