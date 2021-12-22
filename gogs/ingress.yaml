@@ -17,4 +17,3 @@ spec:
             name: gogservice
             port:
               number: 3000
-# Comment
