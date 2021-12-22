@@ -8,4 +8,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 3Gi
+      storage: 10Gi
+  storageClassName: kadalu.storage-pool-1
