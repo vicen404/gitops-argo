@@ -7,6 +7,11 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  defaultBackend:
+    service:
+      name: data
+      port:
+        number: 9000
   rules:
   - http:
       paths:
@@ -17,4 +22,3 @@ spec:
             name: minio
             port:
               number: 9001
-    host: minio-console.cluster.local
