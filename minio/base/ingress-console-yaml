@@ -9,7 +9,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: data
+      name: minio
       port:
         number: 9000
   rules:
