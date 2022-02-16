@@ -5,3 +5,5 @@ traefik.me
 # que acompaña como subdominio a la peticion
 # ejemplo si pedimos resolver la direccion
 # 172.20.7.10.nip.io nos devuelve 172.20.7.10
+# Ambos resolver funcionan de la misma forma
+# o muy parecida
