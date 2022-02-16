@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-minio-console
+  namespace: minio-storage
   annotations:
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/ssl-redirect: "false"
@@ -11,23 +12,19 @@ spec:
     service:
       name: minio
       port:
-        number: 443
-  tls:
-  - hosts:
-      - minio-console.cluster.local
-    secretName: nginx-console-tls
+        number: 80
   rules:
-  - host: minio-console.cluster.local
+  - host: minio-storage-console.cluster.local
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: minio-console
+            name: minio-storage-console
             port:
-              number: 9443
-  - host: minio.cluster.local
+              number: 9090
+  - host: minio-storage.cluster.local
     http:
       paths:
       - path: /
@@ -36,4 +33,4 @@ spec:
           service:
             name: minio
             port:
-              number: 443
+              number: 80
