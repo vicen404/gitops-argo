@@ -1,0 +1,7 @@
+nip.io
+traefik.me
+
+# Son dns resolvers que devuelven la ip
+# que acompaña como subdominio a la peticion
+# ejemplo si pedimos resolver la direccion
+# 172.20.7.10.nip.io nos devuelve 172.20.7.10

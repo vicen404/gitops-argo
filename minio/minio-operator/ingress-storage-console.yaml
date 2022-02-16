@@ -16,6 +16,9 @@ spec:
   tls:
   - hosts:
       - minio-storage-console.cluster.local
+    secretName: nginx-storage-console
+  - hosts:
+      - minio-storage.cluster.local
     secretName: nginx-storage
   rules:
   - host: minio-storage-console.cluster.local
