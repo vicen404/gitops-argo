@@ -15,10 +15,10 @@ spec:
         number: 9090
   tls:
   - hosts:
-      - minio-operator.cluster.local
+      - minio-operator.10.1.1.120.traefik.me
     secretName: nginx-operator-tls
   rules:
-  - host: minio-operator.cluster.local
+  - host: minio-operator.10.1.1.120.traefik.me
     http:
       paths:
       - path: /

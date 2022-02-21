@@ -1,0 +1,28 @@
+apiVersion: ngrok.com/v1alpha1
+kind: Ngrok
+metadata:
+  name: storage-console
+  namespace: minio-storage
+spec:
+  # protocol used, currently support http & tcp
+  # tcp is less tested, please create issue
+  # default is http
+  protocol: http
+
+  # ngrok authtoken
+  authtoken: authtoken-secret
+
+  # ngrok authotken
+  authtoken_type: secret
+
+  # service section represent
+  # the service name in the same namespace
+  service: minio-storage-console
+
+  # port section represent
+  # the service port in the same namespace
+  port: 9090
+
+  # bind an HTTPS or HTTP endpoint or both
+  bind_tls: both
+---
