@@ -3,10 +3,10 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - configmap.yaml
   - deployment.yaml
   - persistentvolumeclaim.yaml
   - service.yaml
   - ingress.yaml
+  - nginx-tls.yaml
 
 namespace: nginx-ns
