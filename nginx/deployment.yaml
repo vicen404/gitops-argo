@@ -22,7 +22,7 @@ spec:
           claimName: pvc-basic-csi-nas1
       containers:
       - name: nginx
-        image: "nginx"
+        image: core-192-168-3-230.traefik.me/reg1/httpd:latest
         resources:
           limits:
             cpu: 200m
