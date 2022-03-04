@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - nginx-10-1-1-120.traefik.me
+      - nginx-192-168-3-230.traefik.me
     secretName: nginx-nginx-tls
   rules:
-  - host: nginx-10-1-1-120.traefik.me
+  - host: nginx-192-168-3-230.traefik.me
     http:
       paths:
       - path: /

@@ -53,9 +53,9 @@ metadata:
 spec:
   secretName: sample-public-certificate
   dnsNames:
-    - core-10-1-1-120.traefik.me
-    - notary-10-1-1-120.traefik.me
-    - minio-10-1-1-120.traefik.me
+    - core-192-168-3-230.traefik.me
+    - notary-192-168-3-230.traefik.me
+    - minio-192-168-3-230.traefik.me
   issuerRef:
     name: selfsigned-issuer
     kind: Issuer
@@ -76,20 +76,18 @@ spec:
   imageSource:
     repository: ghcr.io/goharbor
   harborAdminPasswordRef: admin-core-secret
-  externalURL: https://core-10-1-1-120.traefik.me
+  externalURL: https://core-192-168-3-230.traefik.me
   expose:
     core:
       ingress:
-        host: core-10-1-1-120.traefik.me
+        host: core-192-168-3-230.traefik.me
         controller: default
-        ingressClassName: nginx
       tls:
         certificateRef: sample-public-certificate
     notary:
       ingress:
-        host: notary-10-1-1-120.traefik.me
+        host: notary-192-168-3-230.traefik.me
         controller: default
-        ingressClassName: nginx
       tls:
         certificateRef: sample-public-certificate
   internalTLS:
@@ -136,9 +134,8 @@ spec:
           enable: true
           expose:
             ingress:
-              host: minio-10-1-1-120.traefik.me
+              host: minio-192-168-3-230.traefik.me
               controller: default
-              ingressClassName: nginx
             tls:
               certificateRef: sample-public-certificate
         volumesPerServer: 2
@@ -148,7 +145,7 @@ spec:
               - ReadWriteOnce
             resources:
               requests:
-                storage: 5Gi
+                storage: 2Gi
   cache:
     kind: RedisFailover
     spec:
