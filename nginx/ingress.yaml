@@ -3,9 +3,8 @@ kind: Ingress
 metadata:
   name: simple-example
   namespace: nginx-ns
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
       - nginx-192-168-3-230.traefik.me
