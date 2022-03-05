@@ -7,6 +7,6 @@ resources:
   - persistentvolumeclaim.yaml
   - service.yaml
   - ingress.yaml
-  - nginx-tls.yaml
+  - sealed-nginx-tls.yaml
 
 namespace: nginx-ns
