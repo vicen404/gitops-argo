@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/component: controller 
   name: nginx
-  namespace: ingress-nginx
+  namespace: kube-system
   annotations:
     ingressclass.kubernetes.io/is-default-class: "true"
 spec:

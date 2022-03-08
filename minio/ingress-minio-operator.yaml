@@ -3,11 +3,9 @@ kind: Ingress
 metadata:
   name: ingress-console
   namespace: minio-operator
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: minio-console.nexus.io
+  - host: minio-console-10-1-1-120.traefik.me
     http:
       paths:
       - path: /
