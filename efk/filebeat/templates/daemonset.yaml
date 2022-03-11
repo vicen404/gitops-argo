@@ -108,7 +108,7 @@ spec:
           path: /var/log
       - name: varrundockersock
         hostPath:
-          path: /run/k3s/containerd/containerd.sock
+          path: /run/containerd/containerd.sock
       {{- if .Values.extraVolumes | default .Values.daemonset.extraVolumes }}
 {{ toYaml ( .Values.extraVolumes | default .Values.daemonset.extraVolumes )  | indent 6 }}
       {{- end }}
