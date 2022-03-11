@@ -142,7 +142,7 @@ ingress:
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kibana-10-1-1-120.traefik.me
+    - host: kibana-192-168-3-230.traefik.me
       paths:
         - path: /
   #tls: []
