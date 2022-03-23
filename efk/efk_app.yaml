@@ -11,6 +11,6 @@ spec:
     namespace: monitoring
   project: default
   source:
-    path: apps
-    repoURL: https://github.com/vicen404/gitops-argo/tree/master/efk/apps
+    path: efk/apps
+    repoURL: https://github.com/vicen404/gitops-argo.git
     targetRevision: HEAD
