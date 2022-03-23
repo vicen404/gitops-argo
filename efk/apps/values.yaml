@@ -1,0 +1,6 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/vicen404/gitops-argo/tree/master/efk
+    targetRevision: HEAD

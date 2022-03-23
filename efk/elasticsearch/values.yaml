@@ -15,7 +15,7 @@ roles:
   remote_cluster_client: "true"
   ml: "true"
 
-replicas: 2
+replicas: 1 
 minimumMasterNodes: 1
 
 esMajorVersion: ""
@@ -101,7 +101,7 @@ volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 20Gi
+      storage: 10Gi
 
 rbac:
   create: false
