@@ -12,5 +12,5 @@ spec:
   project: default
   source:
     path: apps
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    repoURL: https://github.com/vicen404/gitops-argo/tree/master/efk/apps
     targetRevision: HEAD
