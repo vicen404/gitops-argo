@@ -13,7 +13,7 @@ spec:
     path: efk/logstash
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-  project: default
+  project: efk
   syncPolicy:
     automated:
       prune: true
