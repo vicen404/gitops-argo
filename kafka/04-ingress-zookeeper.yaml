@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zoo
+  namespace: kafka
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: zoo-10-1-1-160.traefik.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kafka-cluster-zookeeper-client
+            port:
+              number: 2181
