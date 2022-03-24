@@ -1,18 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka-operator
+  name: kafka
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
-  source:
-    chart: strimzi/strimzi-kafka-operator
-    repoURL: https://strimzi.io/charts
-    helm:
-      releaseName: kafka-operator
   destination:
-    server: "https://kubernetes.default.svc"
+    server: https://kubernetes.default.svc
     namespace: kafka
+  source:
+    path: kafka/strimzi-kafka-operator
+    repoURL: https://github.com/vicen404/gitops-argo.git
+    targetRevision: HEAD
+  project: default
   syncPolicy:
     automated:
       prune: true
