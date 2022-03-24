@@ -8,7 +8,6 @@ spec:
   source:
     chart: strimzi/strimzi-kafka-operator
     repoURL: https://strimzi.io/charts
-    targetRevision: 0.28.0
     helm:
       releaseName: kafka-operator
   destination:
