@@ -9,8 +9,12 @@ spec:
   destination:
     namespace: logging
     server: {{ .Values.spec.destination.server }}
-  project: default
   source:
     path: efk/kibana
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
