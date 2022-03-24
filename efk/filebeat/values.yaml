@@ -38,7 +38,10 @@ daemonset:
             matchers:
             - logs_path:
                 logs_path: "/var/log/containers/"
-
+        - drop_event.when:
+            or:
+            - equals:
+                kubernetes.namespace: "logging"
       output.logstash:
         hosts: ["logstash-logstash.logging.svc.cluster.local:5044"]
   # Only used when updateStrategy is set to "RollingUpdate"
