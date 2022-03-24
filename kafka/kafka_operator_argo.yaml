@@ -7,13 +7,13 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    server: https://kubernetes.kafka.svc
     namespace: kafka
   source:
     path: kafka/strimzi-kafka-operator
     repoURL: https://github.com/vicen404/gitops-argo.git
     targetRevision: HEAD
-  project: default
+  project: kafka
   syncPolicy:
     automated:
       prune: true
