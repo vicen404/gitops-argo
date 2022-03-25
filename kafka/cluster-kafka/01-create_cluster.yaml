@@ -15,14 +15,14 @@ spec:
         configuration:
           class: nginx
           bootstrap:
-            host: bootstrap-10-1-1-160.nip.io
+            host: bootstrap-10-1-1-160.traefik.me
           brokers:
           - broker: 0
-            host: broker-0-10-1-1-160.nip.io
+            host: broker-0-10-1-1-160.traefik.me
           - broker: 1
-            host: broker-1-10-1-1-160.nip.io
+            host: broker-1-10-1-1-160.traefik.me
           - broker: 2
-            host: broker-2-10-1-1-160.nip.io
+            host: broker-2-10-1-1-160.traefik.me
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3
