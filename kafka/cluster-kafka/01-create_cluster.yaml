@@ -8,6 +8,14 @@ spec:
     version: 3.1.0
     replicas: 3
     listeners:
+      - name: plain
+        tls: false
+        port: 9092
+        type: internal
+      - name: tls
+        port: 9093
+        type: internal
+        tls: true
       - name: external
         port: 9094
         type: ingress
