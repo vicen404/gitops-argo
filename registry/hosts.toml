@@ -1,0 +1,8 @@
+# Este fichjero residira en /var/snap/microk8s/current/args/certs.d/registry-10-1-1-20.traefik.me
+# Si no existe el directorio habra que crearlo antes
+
+server = "http://registry-10-1-1-20.traefik.me"
+
+[host."http://registry-10-1-1-20.traefik.me"]
+  capabilities = ["pull", "resolve"]
+
