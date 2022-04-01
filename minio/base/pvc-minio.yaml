@@ -8,5 +8,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 40Gi
-  storageClassName: portworx-rwx-gp1-sc
+      storage: 20Gi
+  storageClassName: portworx-shared-gp1
