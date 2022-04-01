@@ -1,0 +1,100 @@
+items:
+- backendUUID: 9a3d83e1-dc3e-49bf-a388-7f5fa2acce1b
+  config:
+    aggregate: ""
+    autoExportCIDRs:
+    - 0.0.0.0/0
+    - ::/0
+    autoExportPolicy: false
+    backendName: nas1-backend
+    chapInitiatorSecret: <REDACTED>
+    chapTargetInitiatorSecret: <REDACTED>
+    chapTargetUsername: <REDACTED>
+    chapUsername: <REDACTED>
+    clientCertificate: ""
+    clientPrivateKey: <REDACTED>
+    credentials:
+      name: <REDACTED>
+      type: <REDACTED>
+    dataLIF: 192.168.3.165
+    debug: false
+    debugTraceFlags: null
+    defaults:
+      adaptiveQosPolicy: ""
+      encryption: "false"
+      exportPolicy: default
+      fileSystemType: ext4
+      mirroring: "false"
+      qosPolicy: ""
+      securityStyle: unix
+      size: 1G
+      snapshotDir: "false"
+      snapshotPolicy: none
+      snapshotReserve: ""
+      spaceAllocation: "true"
+      spaceReserve: none
+      splitOnClone: "false"
+      tieringPolicy: ""
+      unixPermissions: '---rwxrwxrwx'
+    disableDelete: false
+    emptyFlexvolDeferredDeletePeriod: ""
+    igroupName: ""
+    labels: null
+    limitAggregateUsage: ""
+    limitVolumeSize: ""
+    lunsPerFlexvol: ""
+    managementLIF: 192.168.3.160
+    nfsMountOptions: ""
+    password: <REDACTED>
+    qtreePruneFlexvolsPeriod: ""
+    qtreeQuotaResizePeriod: ""
+    qtreesPerFlexvol: ""
+    region: ""
+    replicationPolicy: ""
+    replicationSchedule: ""
+    serialNumbers:
+    - 4082368-50-7
+    storage:
+    - defaults:
+        adaptiveQosPolicy: ""
+        encryption: ""
+        exportPolicy: ""
+        fileSystemType: ""
+        mirroring: ""
+        qosPolicy: ""
+        securityStyle: ""
+        size: ""
+        snapshotDir: ""
+        snapshotPolicy: ""
+        snapshotReserve: ""
+        spaceAllocation: ""
+        spaceReserve: ""
+        splitOnClone: ""
+        tieringPolicy: ""
+        unixPermissions: ""
+      labels:
+        cpd: site1
+        system: nas1
+        type: ontap-nas
+      region: ""
+      supportedTopologies: null
+      zone: ""
+    storageDriverName: ontap-nas
+    storagePrefix: {}
+    supportedTopologies: null
+    svm: k8s1
+    trustedCACertificate: ""
+    usageHeartbeat: ""
+    useCHAP: false
+    useREST: false
+    username: <REDACTED>
+    version: 1
+    zone: ""
+  configRef: ""
+  name: nas1-backend
+  online: true
+  protocol: file
+  state: failed
+  storage: {}
+  volumes: []
+
