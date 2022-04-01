@@ -1,0 +1,57 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "creationTimestamp": "2022-03-31T15:58:01Z",
+    "deletionTimestamp": "2022-03-31T15:59:04Z",
+    "labels": {
+      "kubernetes.io/metadata.name": "trident"
+    },
+    "name": "trident",
+    "resourceVersion": "547814",
+    "uid": "a68963c7-c763-4502-abf1-814895f58eef"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2022-03-31T15:59:11Z",
+        "message": "All resources successfully discovered",
+        "reason": "ResourcesDiscovered",
+        "status": "False",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2022-03-31T15:59:11Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2022-03-31T15:59:11Z",
+        "message": "All content successfully deleted, may be waiting on finalization",
+        "reason": "ContentDeleted",
+        "status": "False",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2022-03-31T15:59:11Z",
+        "message": "Some resources are remaining: tridentbackends.trident.netapp.io has 1 resource instances, tridentstorageclasses.trident.netapp.io has 1 resource instances, tridentversions.trident.netapp.io has 1 resource instances, tridentvolumepublications.trident.netapp.io has 3 resource instances, tridentvolumes.trident.netapp.io has 3 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2022-03-31T15:59:11Z",
+        "message": "Some content in the namespace has finalizers remaining: trident.netapp.io in 9 resource instances",
+        "reason": "SomeFinalizersRemain",
+        "status": "True",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}

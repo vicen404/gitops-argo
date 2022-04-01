@@ -1,18 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-kasten
-  namespace: kasten-io
+  name: wp-ingress
 spec:
   ingressClassName: nginx
   rules:
-  - host: kasten-192-168-3-230.traefik.me
+  - host: wp-192-168-3-230.traefik.me
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: gateway
+            name: wordpress
             port:
-              number: 8000
+              number: 80

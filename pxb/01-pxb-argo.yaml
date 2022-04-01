@@ -1,0 +1,43 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: px-central
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: px-central
+    repoURL: http://charts.portworx.io
+    targetRevision: 2.1.2
+    helm:
+      releaseName: px-central
+      parameters:
+      - name: pxbackup.enabled
+        value: "true"
+      - name: persistentStorage.cassandra.storage
+        value: "16Gi"
+      - name: persistentStorage.grafana.storage
+        value: "10Gi"
+      - name: persistentStorage.enabled
+        value: "true"
+      - name: persistentStorage.mongodbVolumeSize
+        value: "16Gi"
+      - name: persistentStorage.mongoCacheSize
+        value: "2"
+      - name: persistentStorage.mysqlVolumeSize
+        value: "16Gi"
+      - name: persistentStorage.etcdVolumeSize
+        value: "10Gi"
+      - name: persistentStorage.storageClassName
+        value: "portworx-rwx-gp1-sc"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: px-central
+  project: px-central
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true

@@ -8,5 +8,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
-  storageClassName: kadalu.storage-pool-1
+      storage: 40Gi
+  storageClassName: portworx-rwx-gp1-sc
