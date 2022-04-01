@@ -30,7 +30,7 @@ spec:
       - name: persistentStorage.etcdVolumeSize
         value: "10Gi"
       - name: persistentStorage.storageClassName
-        value: "portworx-rwx-gp1-sc"
+        value: "portworx-shared-gp1"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: px-central
