@@ -1,0 +1,47 @@
+# SOURCE: https://install.portworx.com/?operator=true&mc=false&kbver=&oem=esse&user=f9291a3b-75e2-11ea-97e6-f6e09c7a4e5e&b=true&s=%2Fdev%2Fsdb&j=auto&c=px-cluster-ebc3a29b-e6d7-49fd-87db-b55ccaf54bcb&stork=true&csi=true&tel=false&st=k8s
+kind: StorageCluster
+apiVersion: core.libopenstorage.org/v1
+metadata:
+  name: px-cluster-ebc3a29b-e6d7-49fd-87db-b55ccaf54bcb
+  namespace: kube-system
+  annotations:
+    portworx.io/install-source: "https://install.portworx.com/?operator=true&mc=false&kbver=&oem=esse&user=f9291a3b-75e2-11ea-97e6-f6e09c7a4e5e&b=true&s=%2Fdev%2Fsdb&j=auto&c=px-cluster-ebc3a29b-e6d7-49fd-87db-b55ccaf54bcb&stork=true&csi=true&tel=false&st=k8s"
+    portworx.io/misc-args: "--oem esse"
+spec:
+  image: portworx/oci-monitor:2.9.1.4
+  imagePullPolicy: Always
+  deleteStrategy:
+    type: UninstallAndWipe
+  placement:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: px/enabled
+            operator: NotIn
+            values:
+            - "false"
+  kvdb:
+    internal: true
+  storage:
+    devices:
+    - /dev/sdb
+    journalDevice: auto
+  secretsProvider: k8s
+  stork:
+    enabled: true
+    args:
+      webhook-controller: "false"
+  autopilot:
+    enabled: true
+  featureGates:
+    CSI: "true"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: px-essential
+  namespace: kube-system
+data:
+  px-essen-user-id: ZjkyOTFhM2ItNzVlMi0xMWVhLTk3ZTYtZjZlMDljN2E0ZTVl
+  px-osb-endpoint: aHR0cHM6Ly9weGVzc2VudGlhbHMucG9ydHdvcnguY29tL29zYi9iaWxsaW5nL3YxL3JlZ2lzdGVy

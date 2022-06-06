@@ -1,0 +1,65 @@
+apiVersion: v1
+items:
+- apiVersion: core.libopenstorage.org/v1
+  kind: StorageCluster
+  metadata:
+    annotations:
+      portworx.io/install-source: https://install.portworx.com/?operator=true&mc=false&kbver=&oem=esse&user=f9291a3b-75e2-11ea-97e6-f6e09c7a4e5e&b=true&s=%2Fdev%2Fsdb&j=auto&c=px-cluster-480f1410-1956-413a-86b4-f2f50a440792&stork=true&csi=true&tel=false&st=k8s
+      portworx.io/misc-args: --oem esse
+    finalizers:
+    - operator.libopenstorage.org/delete
+    generation: 3
+    name: px-cluster-480f1410-1956-413a-86b4-f2f50a440792
+    namespace: kube-system
+  spec:
+    autopilot:
+      enabled: true
+      providers:
+      - name: default
+        params:
+          url: http://px-prometheus:9090
+        type: prometheus
+    featureGates:
+      CSI: "true"
+    image: portworx/oci-monitor:2.9.1.4
+    imagePullPolicy: Always
+    kvdb:
+      internal: true
+    placement:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: px/enabled
+              operator: NotIn
+              values:
+              - "false"
+          - matchExpressions:
+            - key: px/enabled
+              operator: NotIn
+              values:
+              - "false"
+            - key: node-role.kubernetes.io/master
+              operator: Exists
+            - key: node-role.kubernetes.io/worker
+              operator: Exists
+    revisionHistoryLimit: 10
+    secretsProvider: k8s
+    startPort: 9001
+    storage:
+      devices:
+      - /dev/sdb
+      journalDevice: auto
+    stork:
+      args:
+        webhook-controller: "false"
+      enabled: true
+    updateStrategy:
+      rollingUpdate:
+        maxUnavailable: 1
+      type: RollingUpdate
+    version: 2.9.1.4
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
