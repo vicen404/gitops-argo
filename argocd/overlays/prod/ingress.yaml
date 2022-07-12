@@ -15,10 +15,10 @@ spec:
             name: argocd-server
             port:
               number: 80
-    host: argocd-10-1-1-160.traefik.me
+    host: argocd-10-1-1-120.traefik.me
   tls:
   - hosts:
-    - argocd-10-1-1-160.traefik.me
+    - argocd-10-1-1-120.traefik.me
     secretName: argocd-secret # do not change, this is provided by Argo CD
 ---
 apiVersion: networking.k8s.io/v1
@@ -38,8 +38,8 @@ spec:
             name: argocd-server
             port:
               number: 443
-    host: argocd-grpc-10-1-1-160.traefik.me
+    host: argocd-grpc-10-1-1-120.traefik.me
   tls:
   - hosts:
-    - argocd-grpc-10-1-1-160.traefik.me
+    - argocd-grpc-10-1-1-120.traefik.me
     secretName: argocd-secret # do not change, this is provided by Argo CD
