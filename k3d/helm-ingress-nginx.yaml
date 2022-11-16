@@ -8,4 +8,8 @@ spec:
   chart: ingress-nginx
   version: 4.0.16
   targetNamespace: kube-system
-
+  valuesContent: |-
+    controller:
+      service:
+        externalIPs:
+          - 10.1.1.120
