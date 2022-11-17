@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- namespace.yaml
 - warp-demo-db-pvc.yaml
 - warp-demo-db-deployment.yaml
 - warp-demo-db-service.yaml
@@ -12,4 +11,4 @@ resources:
 - warp-demo-nginx-service.yaml
 - warp-demo-ingress-wsgi.yaml
 
-namespace: warp
+namespace: warp-prod
