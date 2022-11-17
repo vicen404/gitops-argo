@@ -33,7 +33,7 @@ spec:
               value: i18n/en.js
             - name: WARP_SECRET_KEY
               value: mysecretkey
-          image: registry-192-168-3-230.traefik.me/warp_warp-demo-wsgi:latest
+          image: vicen404/warp:latest
           name: warp-demo-wsgi
           ports:
           - containerPort: 8000
