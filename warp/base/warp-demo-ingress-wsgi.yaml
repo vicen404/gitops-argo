@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: warp-192-168-3-230.traefik.me
+  - host: warp.10.1.1.120.nip.io
     http:
       paths:
       - path: /
