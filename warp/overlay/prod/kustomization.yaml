@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - ../../base
 
-namespace: warp
+namespace: warp-prod
