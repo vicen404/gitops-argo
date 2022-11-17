@@ -10,5 +10,3 @@ resources:
 - warp-demo-nginx-deployment.yaml
 - warp-demo-nginx-service.yaml
 - warp-demo-ingress-wsgi.yaml
-
-namespace: warp-prod
