@@ -37,7 +37,6 @@ spec:
             name: storage
           resources: {}
       restartPolicy: Always
-      schedulerName: stork
       volumes:
       - name: storage
         persistentVolumeClaim:
