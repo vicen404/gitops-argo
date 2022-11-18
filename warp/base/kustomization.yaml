@@ -9,4 +9,3 @@ resources:
 - warp-demo-nginx-cm.yaml
 - warp-demo-nginx-deployment.yaml
 - warp-demo-nginx-service.yaml
-- warp-demo-ingress-wsgi.yaml
