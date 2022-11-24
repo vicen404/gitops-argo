@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: logging
+    namespace: warp-stage
   source:
     path: warp/overlay/stage
     repoURL: https://github.com/vicen404/gitops-argo.git
