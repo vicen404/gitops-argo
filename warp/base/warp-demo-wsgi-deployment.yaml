@@ -35,7 +35,7 @@ spec:
               value: i18n/en.js
             - name: WARP_SECRET_KEY
               value: mysecretkey
-          image: vicen404/warp:73b4b04ce16b71ecd75ddea6716dcf8b99969211
+          image: vicen404/warp:8b77fac3d9eee0ac12316ff6226b038ad447b30a
           name: warp-demo-wsgi
           ports:
           - containerPort: 8000
