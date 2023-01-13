@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: warp-prod
+  name: project_openai_codex-prod
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: openai-demo
+    namespace: openai-codex-prod
   source:
     path: project_openai_codex/overlay/prod
     repoURL: https://github.com/vicen404/gitops-argo.git
