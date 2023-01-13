@@ -27,7 +27,7 @@ spec:
               secretKeyRef:
                 name: secret-openai
                 key: OPENAI_API_KEY
-          image: vicen404/openai-codex-server:1.4
+          image: vicen404/openai-codex-server:1.5
           name: openai-server
           ports:
           - containerPort: 5000
