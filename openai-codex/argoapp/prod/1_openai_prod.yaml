@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: project_openai_codex-prod
+  name: openai-codex-prod
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: openai-codex-prod
   source:
-    path: project_openai_codex/overlay/prod
+    path: openai-codex/overlay/prod
     repoURL: https://github.com/vicen404/gitops-argo.git
     targetRevision: HEAD
   project: default
