@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    io.kompose.service: openai-client
+  name: openai-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: openai-client
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: openai-client
+    spec:
+      containers:
+          image: vicen404/project_openai_codex-client:a9a453ffbb7fee44347aff0ff1454fd10dd5f931
+          name: openai-client
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}
