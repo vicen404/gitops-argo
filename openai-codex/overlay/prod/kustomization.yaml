@@ -4,4 +4,4 @@ resources:
 - ../../base
 - openai-ingress.yaml
 
-namespace: openai-demo
+namespace: openai-codex-prod
