@@ -10,9 +10,9 @@ metadata:
   name: openai-client
 spec:
   ports:
-    - name: "8080"
-      port: 8080
-      targetPort: 8080
+    - name: "5173"
+      port: 5173
+      targetPort: 5173
   selector:
     io.kompose.service: openai-client
 status:
