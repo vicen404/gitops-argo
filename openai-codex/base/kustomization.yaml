@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- openai-server-deployment.yaml
 - openai-client-deployment.yaml
+- openai-client-service.yaml
+- openai-server-deployment.yaml
 - openai-server-service.yaml
-- openai-server-client.yaml
