@@ -22,10 +22,10 @@ spec:
     spec:
       containers:
         - env:
-          - name: OPENAI_API_KEY
+          - name: OPENAI-API-KEY
             valueFrom:
               secretKeyRef:
-                name: OPENAI_API_KEY
+                name: OPENAI-API-KEY
                 key: secret-openai
           image: vicen404/openai-codex-server:1.3
           name: openai-server
