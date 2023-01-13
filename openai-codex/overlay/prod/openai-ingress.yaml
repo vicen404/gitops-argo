@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: openai.change_me.nip.io
+  - host: openai.changeme.nip.io
     http:
       paths:
       - path: /
