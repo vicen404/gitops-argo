@@ -22,7 +22,7 @@ spec:
         - image: vicen404/openai-codex-client:1.5
           name: openai-client
           ports:
-          - containerPort: 80
+          - containerPort: 5173
             protocol: TCP
           resources: {}
       restartPolicy: Always
