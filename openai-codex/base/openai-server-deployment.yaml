@@ -21,12 +21,9 @@ spec:
         io.kompose.service: openai-server
     spec:
       containers:
-        - env:
-          - name: secret-openai-api
-            valueFrom:
-              secretKeyRef:
-                name: secret-openai
-                key: OPENAI_API_KEY
+        - envFrom:
+          - secretRef:
+            name: secret-openai        
           image: vicen404/openai-codex-server:1.6
           name: openai-server
           ports:
