@@ -27,7 +27,7 @@ spec:
         - image: vicen404/openai-codex-server:1.6
           volumeMounts:
           - name: dotenv
-            mountPath: "/usr/src/app/.env"
+            mountPath: "/usr/src/app"
             readOnly: true
           name: openai-server
           ports:
