@@ -23,7 +23,7 @@ spec:
       containers:
         - envFrom:
           - secretRef:
-            name: secret-openai        
+              name: secret-openai        
           image: vicen404/openai-codex-server:1.6
           name: openai-server
           ports:
