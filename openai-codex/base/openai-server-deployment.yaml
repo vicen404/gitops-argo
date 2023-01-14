@@ -33,10 +33,10 @@ spec:
           ports:
           - containerPort: 5000
             protocol: TCP
-        volumes:
-        - name: dotenv
-          secret:
-            secretName: secret-openai
-            optional: false
+      volumes:
+      - name: dotenv
+        secret:
+          secretName: secret-openai
+          optional: false
       restartPolicy: Always
 status: {}
