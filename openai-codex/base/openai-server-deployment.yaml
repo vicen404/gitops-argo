@@ -21,22 +21,13 @@ spec:
         io.kompose.service: openai-server
     spec:
       containers:
-#        - envFrom:
-#          - secretRef:
-#              name: secret-openai        
-        - image: vicen404/openai-codex-server:1.6
-          volumeMounts:
-          - name: dotenv
-            mountPath: "/usr/src/app"
-            readOnly: true
+        - envFrom:
+          - secretRef:
+              name: secret-openai        
+          image: vicen404/openai-codex-server:1.6
           name: openai-server
           ports:
           - containerPort: 5000
             protocol: TCP
-      volumes:
-      - name: dotenv
-        secret:
-          secretName: secret-openai
-          optional: false
       restartPolicy: Always
 status: {}
