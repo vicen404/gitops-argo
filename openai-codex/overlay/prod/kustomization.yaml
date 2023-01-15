@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 - openai-ingress.yaml
+- openai-ingress-server.yaml
 
 namespace: openai-codex-prod
