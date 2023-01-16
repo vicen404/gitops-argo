@@ -7,8 +7,11 @@ metadata:
   name: ingress-openai-server
 spec:
   ingressClassName: nginx
+  - hosts:
+      - openai-server.10.1.1.130.traefik.me
+    secretName: openai-tls
   rules:
-  - host: openai-server.10.1.1.130.nip.io
+  - host: openai-server.10.1.1.130.traefik.me
     http:
       paths:
       - path: /
