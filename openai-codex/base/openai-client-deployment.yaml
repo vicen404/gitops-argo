@@ -19,7 +19,7 @@ spec:
         io.kompose.service: openai-client
     spec:
       containers:
-        - image: vicen404/openai-codex-client:2.8
+        - image: vicen404/openai-codex-client:2.9
           name: openai-client
           ports:
           - containerPort: 5173
