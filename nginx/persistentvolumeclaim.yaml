@@ -8,6 +8,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 3Gi
-  storageClassName: basic-csi-nas1
+      storage: 1Gi
 ---
