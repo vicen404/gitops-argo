@@ -1,6 +1,0 @@
-2023/01/27-14:24:34.720 6b0c Creating DB /home/avicente/gitops-argo/node/openai-wasap/server/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
-2023/01/27-14:24:34.728 6b0c Reusing MANIFEST /home/avicente/gitops-argo/node/openai-wasap/server/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/01/27-14:24:34.781 6b0d Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
-2023/01/27-14:26:03.720 6b0c Level-0 table #5: started
-2023/01/27-14:26:03.776 6b0c Level-0 table #5: 1095355 bytes OK
-2023/01/27-14:26:03.783 6b0c Delete type=0 #3
