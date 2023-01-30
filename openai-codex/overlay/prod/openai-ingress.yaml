@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - openai-client-10-1-1-130.traefik.me
+      - openai-client-192-168-3-130.traefik.me
     secretName: openai-tls
   rules:
-  - host: openai-client-10-1-1-130.traefik.me
+  - host: openai-client-192-168-3-130.traefik.me
     http:
       paths:
       - path: /
