@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: home-192-168-3-130.traefik.me
+  - host: home-192-168-1-201.traefik.me
     http:
       paths:
       - path: /
@@ -25,7 +25,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: node-192-168-3-130.traefik.me
+  - host: node-192-168-1-201.traefik.me
     http:
       paths:
       - path: /
