@@ -41,7 +41,7 @@ spec:
         volumeMounts:
           - mountPath: /config
             name: config
-          - mountPath: /config/configuration.yaml
+          - mountPath: /config
             name: configmap-configuration
       restartPolicy: Always
 ---
