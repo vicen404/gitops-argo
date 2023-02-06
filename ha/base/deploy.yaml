@@ -1,0 +1,78 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ha-deployment
+  namespace: home
+  labels:
+    app: homeassistant
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homeassistant
+  template:
+    metadata:
+      labels:
+        app: homeassistant
+    spec:
+      volumes:
+      - name: config
+        persistentVolumeClaim:
+          claimName: pvc-ha
+      - name: data
+        persistentVolumeClaim:
+          claimName: pvc-node
+      containers:
+      - name: homeassistant
+        image: ghcr.io/home-assistant/home-assistant:stable
+        securityContext:
+          privileged: true
+        ports:
+          - containerPort:  8123
+            name: homeassistant
+        envFrom:
+          - configMapRef:
+              name: env-configmap 
+        volumeMounts:
+          - mountPath: /config
+            name: config
+      restartPolicy: Always
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: node-deployment
+  namespace: home
+  labels:
+    app: node
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: pvc-node
+      containers:
+      - name: node
+        image: nodered/node-red:latest
+        ports:
+          - containerPort:  1880
+            name:  node
+        envFrom:
+          - configMapRef:
+              name: env-configmap
+        volumeMounts:
+          - mountPath: /data
+            name: data
+      restartPolicy: Always
+---

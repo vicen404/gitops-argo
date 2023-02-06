@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ha-ingress
+  namespace: home
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: home-192-168-3-130.traefik.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: homeassistant
+            port:
+              number: 8123
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-ingress
+  namespace: home
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: node-192-168-3-130.traefik.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: node
+            port:
+              number: 1880

@@ -1,0 +1,27 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: homeassistant
+  namespace: home
+spec:
+  selector:
+    app:  homeassistant
+  type:  ClusterIP
+  ports:
+  - name:  homeassistant
+    port:  8123
+    targetPort:  8123
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: node
+  namespace: home
+spec:
+  selector:
+    app:  node
+  type:  ClusterIP
+  ports:
+  - name:  node
+    port:  1880
+    targetPort:  1880
