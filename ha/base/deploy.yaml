@@ -43,8 +43,6 @@ spec:
             name: config
           - mountPath: /config/configuration.yaml
             name: configmap-configuration
-            subPath: configuration.yaml
-
       restartPolicy: Always
 ---
 kind: Deployment
