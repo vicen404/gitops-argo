@@ -41,8 +41,8 @@ spec:
         volumeMounts:
           - mountPath: /config
             name: config
-          - mountPath: /config
-            name: configmap-configuration
+              #          - mountPath: /config
+              #            name: configmap-configuration
       restartPolicy: Always
 ---
 kind: Deployment
