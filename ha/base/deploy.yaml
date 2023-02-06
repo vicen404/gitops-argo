@@ -24,6 +24,9 @@ spec:
       - name: data
         persistentVolumeClaim:
           claimName: pvc-node
+      - name: configmap-configuration
+        configMap:
+          name: configuration-ha 
       containers:
       - name: homeassistant
         image: ghcr.io/home-assistant/home-assistant:stable
@@ -38,6 +41,9 @@ spec:
         volumeMounts:
           - mountPath: /config
             name: config
+          - mountPath: /config/configuration.yaml
+            name: configmap-configuration
+
       restartPolicy: Always
 ---
 kind: Deployment

@@ -8,5 +8,6 @@ resources:
   - namespace.yaml
   - pvc.yaml
   - service.yaml
+  - configmap.yaml
 
 namespace: home
