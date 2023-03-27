@@ -22,7 +22,7 @@ spec:
         - envFrom:
           - secretRef:
               name: secret-openai
-          image: vicen404/openai-codex-client:1.7
+          image: vicen404/openai-codex-client:7.0
           name: openai-client
           ports:
           - containerPort: 5173
