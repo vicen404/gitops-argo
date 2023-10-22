@@ -8,4 +8,5 @@ kubectl -n argocd patch secret argocd-secret \
   }}'
 kubectl patch configmap argocd-cm -n argocd --patch '{ "data": { "admin.enabled": "true" } }'
 kubectl patch ingress argo-cd-ui -n argocd --patch '{ "spec": { "rules":[ { "host": "argocd.3.77.94.204.nip.io" }] } }'
+kubectl patch ingress argo-cd-ui -n argocd --patch '{ "spec": { "tls":[ { "hosts": ["argocd.3.77.94.204.nip.io"] }] } }'
 
