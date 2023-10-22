@@ -7,3 +7,5 @@ kubectl -n argocd patch secret argocd-secret \
     "admin.passwordMtime": "'$(date +%FT%T%Z)'"
   }}'
 kubectl patch configmap argocd-cm -n argocd --patch '{ "data": { "admin.enabled": "true" } }'
+kubectl patch ingress argo-cd-ui -n argocd --patch '{ "spec": { "rules":[ { "host": "argocd.3.77.94.204.nip.io" }] } }'
+
