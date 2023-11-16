@@ -2,14 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
   name: ingress-central
   namespace: central 
 spec:
   ingressClassName: nginx
   rules:
-  - host: pxcentral.3.74.109.157.nip.io
+  - host: pxcentral.3.79.132.216.nip.io
     http:
       paths:
       - path: /
@@ -31,7 +32,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: pxbackup.3.74.109.157.nip.io
+  - host: pxbackup.3.79.132.216.nip.io
     http:
       paths:
       - path: /
@@ -53,7 +54,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: keycloack.3.74.109.157.nip.io
+  - host: keycloack.3.79.132.216.nip.io
     http:
       paths:
       - path: /

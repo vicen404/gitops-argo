@@ -14,7 +14,7 @@ spec:
       port:
         number: 9000
   rules:
-  - host: minio-console.3.74.109.157.nip.io
+  - host: minio-console.3.79.132.216.nip.io
     http:
       paths:
       - path: /
