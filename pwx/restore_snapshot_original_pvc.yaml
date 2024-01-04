@@ -1,0 +1,8 @@
+apiVersion: stork.libopenstorage.org/v1alpha1
+kind: VolumeSnapshotRestore
+metadata:
+  name: restore-demo-warp-db-claim-0
+  namespace: warp-prod
+spec:
+  sourceName: demo-warp-db-claim-0
+  sourceNamespace: warp-prod

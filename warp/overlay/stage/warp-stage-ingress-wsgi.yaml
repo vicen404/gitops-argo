@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: warp-stage.change_me.nip.io
+  - host: warp-stage.35.157.206.125.nip.io
     http:
       paths:
       - path: /
