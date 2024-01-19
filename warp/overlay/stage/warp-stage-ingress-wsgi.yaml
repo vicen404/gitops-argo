@@ -6,6 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
   name: ingress-warp
+  namespace: warp-stage
 spec:
   ingressClassName: nginx
   rules:
