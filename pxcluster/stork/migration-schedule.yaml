@@ -1,0 +1,21 @@
+apiVersion: stork.libopenstorage.org/v1alpha1
+kind: MigrationSchedule
+metadata:
+  name: migrationschedule
+  namespace: kube-system
+  annotations:
+    # Add the below annotations when PX-Security is enabled on both the clusters
+    #openstorage.io/auth-secret-namespace: <the namespace where the kubernetes secret holding the auth token resides>
+    #openstorage.io/auth-secret-name: <the name of the kubernetes secret which holds the auth token>
+spec:
+  template:
+    spec:
+      clusterPair: migration-cluster-pair
+      includeResources: true
+      startApplications: false
+      includeVolumes: true
+      namespaces:
+      - warp-prod
+  schedulePolicyName: <your-schedule-policy>
+  suspend: false
+  autoSuspend: true
