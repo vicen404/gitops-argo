@@ -4,4 +4,4 @@ metadata:
   name: schedule-policy
 policy:
   interval:
-    intervalMinutes: 30   
+    intervalMinutes: 5  
