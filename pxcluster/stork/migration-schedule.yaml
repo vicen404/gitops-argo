@@ -1,7 +1,7 @@
 apiVersion: stork.libopenstorage.org/v1alpha1
 kind: MigrationSchedule
 metadata:
-  name: migrationschedule
+  name: migrationschedule-1
   namespace: kube-system
   annotations:
     # Add the below annotations when PX-Security is enabled on both the clusters
@@ -16,6 +16,6 @@ spec:
       includeVolumes: true
       namespaces:
       - warp-prod
-  schedulePolicyName: <your-schedule-policy>
+  schedulePolicyName: schedule-policy
   suspend: false
   autoSuspend: true
