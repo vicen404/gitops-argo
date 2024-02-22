@@ -5,4 +5,4 @@ storkctl suspend migrationschedule migrationschedule-1 -n kube-system
 kubectl scale --replicas=0 deploy deployment -n warp-prod
 
 # En tercer lugar nos conectamos al cluster de destino y activamos la replica
-storkctl activate migration -n kube-system
+storkctl activate migration -n warp-prod
