@@ -20,7 +20,7 @@ storkctl get migration -n kube-system
 kubectl delete ns petclinic
 
 # Failover
-# Desactivar el clusterdomain local
+# Desactivar el clusterdomain local (es necesaria licencia px-dr)
 storkctl deactivate clusterdomain cluster-1 --wait
 
 # Suspender las replicas
