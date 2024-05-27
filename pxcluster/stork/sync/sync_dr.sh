@@ -21,7 +21,7 @@ kubectl delete ns petclinic
 
 # Failover
 # Desactivar el clusterdomain local
-storkctl deactivate clusterdomain cluster-1
+storkctl deactivate clusterdomain cluster-1 --wait
 
 # Suspender las replicas
 storkctl suspend migrationschedule appmigrationschedule -n kube-system
