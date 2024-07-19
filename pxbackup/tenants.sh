@@ -214,3 +214,7 @@ echo "Add to users in kubeconfig:
 cert
 roles
 modkconfig
+
+echo "You can change your context:
+kubectl config use-context dev_appclinic-context
+kubectl config use-context dev_appsock-context"
