@@ -36,10 +36,6 @@ kubectl get csr dev-appsock-csr -o jsonpath='{.status.certificate}' | base64 --d
 }
 
 roles () {
-kubectl create ns petclinic
-kubectl create ns sock-shop
-kubectl apply -f perm.yaml
-exit
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -76,15 +72,12 @@ rules:
 - apiGroups: ["coordination.k8s.io"]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
-- apiGroups: ["stork.libopenstorage.org"]
-  resources: ["schedulepolicies"]
-  verbs: ["create", "delete", "deletecollection", "get", "list", "patch", "update", "watch"]
 - apiGroups: ["stork.libopenstorage.org"] # for controller support
   resources: ["*"]
-  verbs: ["list", "get", "watch"]
-- apiGroups: ["snapshot.storage.k8s.io"]
+  verbs: ["create", "delete", "deletecollection", "get", "list", "patch", "update", "watch"]
+- apiGroups: ["snapshot.storage.k8s.io"] # px-backup need list volumesnapshotclasses
   resources: ["volumesnapshotclasses"]
-  verbs: ["get", "list"]
+  verbs: ["get", "list", "watch"]
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -179,61 +172,45 @@ roleRef:
   name: admin-role-sock-shop
   apiGroup: rbac.authorization.k8s.io
 
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: central
-  name: admin-role-central
-rules:
-- apiGroups: [""]
-  resources: ["*"]
-  verbs: ["*"]
-- apiGroups: ["apps", "extensions"]
-  resources: ["*"]
-  verbs: ["*"]
-- apiGroups: ["batch"]
-  resources: ["*"]
-  verbs: ["*"]
-- apiGroups: ["autoscaling"]
-  resources: ["*"]
-  verbs: ["*"]
-- apiGroups: ["rbac.authorization.k8s.io"]
-  resources: ["*"]
-  verbs: ["*"]
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: admin-rolebinding-central-dev_appclinic
-  namespace: central
-subjects:
-- kind: User
-  name: dev_appclinic
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: Role
-  name: admin-role-central
-  apiGroup: rbac.authorization.k8s.io
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: admin-rolebinding-central-dev_appsock
-  namespace: central
-subjects:
-- kind: User
-  name: dev_appsock
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: Role
-  name: admin-role-central
-  apiGroup: rbac.authorization.k8s.io
-
 EOF
+}
+
+modkconfig () {
+
+user_clinic_crt=$(cat dev_appclinic.crt | base64 | tr -d '\n')
+user_clinic_key=$(cat dev_appclinic.key | base64 | tr -d '\n')
+user_sock_crt=$(cat dev_appsock.crt | base64 | tr -d '\n')
+user_sock_key=$(cat dev_appsock.key | base64 | tr -d '\n')
+
+echo
+echo "Modify the kubeconfig file with"
+echo "this changes:"
+echo
+echo "Add to context in kubeconfig:
+- context:
+    cluster: kubernetes
+    namespace: petclinic
+    user: dev_appclinic
+  name: dev_appclinic-context
+- context:
+    cluster: kubernetes
+    namespace: sock-shop
+    user: dev_appsock
+  name: dev_appsock-context
+"
+echo
+echo "Add to users in kubeconfig:
+- name: dev_appclinic
+  user:
+    client-certificate-data: $user_clinic_crt
+    client-key-data: $user_clinic_key
+- name: dev_appsock
+  user:
+    client-certificate-data: $user_sock_crt
+    client-key-data: $user_sock_key
+"
 }
 
 cert
 roles
+modkconfig
