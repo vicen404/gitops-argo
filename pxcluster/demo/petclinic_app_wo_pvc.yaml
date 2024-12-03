@@ -186,4 +186,4 @@ spec:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: petclinic-db-mysqlapiVersion: v1
+          claimName: petclinic-db-mysql
