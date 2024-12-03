@@ -1,0 +1,8 @@
+apiVersion: stork.libopenstorage.org/v1alpha1
+kind: VolumeSnapshotRestore
+metadata:
+  name: restore-petclinic-db-mysql
+  namespace: petclinic
+spec:
+  sourceName: snap-petclinic-db-mysql
+  sourceNamespace: petclinic
